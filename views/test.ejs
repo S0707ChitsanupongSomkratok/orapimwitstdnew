@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="datere">เลือกวันที่:</label>
+    <input id="datere" type="date">
+    <button onclick="sede()">click</button>
+
+    <script>
+        function sede() {
+            const dateInput = document.getElementById('datere');
+            console.log(dateInput.value); // จะแสดงผลเป็น "YYYY-MM-DD"
+
+             const now = new Date();
+            const d = String(now.getDate()).padStart(2, '0');
+            const m = String(now.getMonth() + 1).padStart(2, '0');
+            const y = now.getFullYear() + 543;
+            const h = String(now.getHours()).padStart(2, '0');
+            const min = String(now.getMinutes()).padStart(2, '0');
+            
+            const fullDate = `${d}-${m}-${y}-${h}:${min}`;
+            const datere = `${y - 543}-${m}-${d}`;
+
+            if (datere == dateInput.value) {
+                alert("Yes");
+            } else {
+                alert("No")
+            }
+        }
+
+        const now = new Date();
+        const d = String(now.getDate()).padStart(2, '0');
+        const m = String(now.getMonth() + 1).padStart(2, '0');
+        const y = now.getFullYear() + 543;
+        const h = String(now.getHours()).padStart(2, '0');
+        const min = String(now.getMinutes()).padStart(2, '0');
+        
+        const fullDate = `${d}-${m}-${y}-${h}:${min}`;
+        const datere = `${y - 543}-${m}-${d}`;
+
+        console.log(datere)
+
+    </script>
+</body>
+</html>

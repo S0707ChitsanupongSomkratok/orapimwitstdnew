@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายชื่อผู้สมัครเข้าศึกษาโรงเรียนอรพิมพ์วิทยา</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Sarabun',sans-serif;
+    background:linear-gradient(135deg,#eef2ff,#f9fafc);
+    margin:0;
+    padding:40px;
+}
+
+/* HEADER */
+
+h1{
+    text-align:center;
+    font-size:32px;
+    margin-bottom:50px;
+    color:#2c3e50;
+}
+
+/* SECTION */
+
+.section{
+    background:white;
+    border-radius:14px;
+    padding:30px;
+    margin-bottom:40px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.section:hover{
+    transform:translateY(-3px);
+}
+
+/* TITLE */
+
+h2{
+    font-size:20px;
+    margin-bottom:15px;
+    padding-bottom:8px;
+    border-bottom:3px solid #3498db;
+    color:#34495e;
+}
+
+/* TABLE */
+
+table{
+    width:100%;
+    border-collapse: collapse;
+}
+
+th{
+    background:#3498db;
+    color:white;
+    padding:12px;
+    font-weight:600;
+}
+
+td{
+    padding:12px;
+    border-bottom:1px solid #eee;
+}
+
+tr:hover{
+    background:#f7fbff;
+}
+
+/* BUTTON */
+
+button{
+    border:none;
+    padding:7px 14px;
+    border-radius:8px;
+    font-family:Sarabun;
+    font-size:14px;
+    cursor:pointer;
+    margin:2px;
+    transition:0.2s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+/* BUTTON COLORS */
+
+.btn-edit{
+    background:#27ae60;
+    color:white;
+}
+
+.btn-print{
+    background:#2980b9;
+    color:white;
+}
+
+.btn-card{
+    background:#8e44ad;
+    color:white;
+}
+
+.btn-delete{
+    background:#e74c3c;
+    color:white;
+}
+
+.btn-edit:hover{background:#219150;}
+.btn-print:hover{background:#2471a3;}
+.btn-card:hover{background:#7d3c98;}
+.btn-delete:hover{background:#c0392b;}
+
+table{
+    width:100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+th,td{
+    padding:12px;
+    border-bottom:1px solid #eee;
+}
+
+/* จัดตำแหน่งคอลัมน์ */
+
+th:nth-child(1),
+td:nth-child(1){
+    width:20%;
+    text-align:center;
+}
+
+th:nth-child(2),
+td:nth-child(2){
+    width:40%;
+    text-align:left;
+}
+
+th:nth-child(3),
+td:nth-child(3){
+    width:40%;
+    text-align:center;
+}
+
+td:nth-child(2){
+    font-weight:500;
+}
+
+</style>
+</head>
+<body>
+
+    <h1>รายชื่อผู้สมัครเข้าศึกษาโรงเรียนอรพิมพ์วิทยา</h1>
+
+
+<!-- ================== ม.1 ================== -->
+
+<div class="section">
+
+    <h2>ม.1 เเผนการเรียน ทั่วไป</h2>
+
+    <table>
+
+        <tr>
+            <th>รหัสประจำตัวผู้สมัคร</th>
+            <th>ชื่อ</th>
+            <th>จัดการ</th>
+        </tr>
+
+        <% data.m1.forEach(function(std){ %>
+
+        <tr>
+
+            <td><%= std.id %></td>
+
+            <td>
+                <%= std.prefix %>
+                <%= std.firstname %>
+                <%= std.lastname %>
+            </td>
+
+
+            <td>
+                <a href="/edit/<%= std.id %>">
+                   <button class="btn-edit">✏️ แก้ไข</button>
+                </a>
+
+                <a href="/print/<%= std.id %>">
+                    <button class="btn-print">🖨 Print</button>
+                </a>
+
+                <a href="/card/<%= std.id %>">
+                    <button class="btn-card">🪪 Card</button>
+                </a>
+
+                <a href="/delete/<%= std.id %>">
+                    <button class="btn-delete">🗑 Delete</button>
+                </a>
+            </td>
+
+        </tr>
+
+        <% }) %>
+
+    </table>
+
+</div>
+
+
+
+<!-- ================== ม.4/1 ================== -->
+
+<div class="section">
+
+    <h2>ม.4 เเผนการเรียน วิทยาศาสตร์-คณิตศาสตร์</h2>
+
+    <table>
+
+        <tr>
+            <th>รหัสประจำตัวผู้สมัคร</th>
+            <th>ชื่อ</th>
+            <th>จัดการ</th>
+        </tr>
+
+        <% data.m41.forEach(function(std){ %>
+
+        <tr>
+
+            <td><%= std.id %></td>
+
+            <td>
+                <%= std.prefix %>
+                <%= std.firstname %>
+                <%= std.lastname %>
+            </td>
+
+
+            <td>
+                 <a href="/edit/<%= std.id %>">
+                   <button class="btn-edit">✏️ แก้ไข</button>
+                </a>
+
+                <a href="/print/<%= std.id %>">
+                    <button class="btn-print">🖨 Print</button>
+                </a>
+
+                <a href="/card/<%= std.id %>">
+                    <button class="btn-card">🪪 Card</button>
+                </a>
+
+                <a href="/delete/<%= std.id %>">
+                    <button class="btn-delete">🗑 Delete</button>
+                </a>
+            </td>
+
+        </tr>
+
+        <% }) %>
+
+    </table>
+
+</div>
+
+
+
+<!-- ================== ม.4/2 ================== -->
+
+<div class="section">
+
+    <h2>ม.4 เเผนการเรียน คณิตศาสตร์-วิทยาศาสตร์เเละเทคโนโลยี</h2>
+
+    <table>
+
+        <tr>
+            <th>รหัสประจำตัวผู้สมัคร</th>
+            <th>ชื่อ</th>
+            <th>จัดการ</th>
+        </tr>
+
+        <% data.m42.forEach(function(std){ %>
+
+        <tr>
+
+            <td><%= std.id %></td>
+
+            <td>
+                <%= std.prefix %>
+                <%= std.firstname %>
+                <%= std.lastname %>
+            </td>
+
+
+            <td>
+                 <a href="/edit/<%= std.id %>">
+                   <button class="btn-edit">✏️ แก้ไข</button>
+                </a>
+
+                <a href="/print/<%= std.id %>">
+                    <button class="btn-print">🖨 Print</button>
+                </a>
+
+                <a href="/card/<%= std.id %>">
+                    <button class="btn-card">🪪 Card</button>
+                </a>
+
+                <a href="/delete/<%= std.id %>">
+                    <button class="btn-delete">🗑 Delete</button>
+                </a>
+            </td>
+
+        </tr>
+
+        <% }) %>
+
+    </table>
+
+</div>
+
+
+
+<!-- ================== ม.4/3 ================== -->
+
+<div class="section">
+
+    <h2>ม.4 เเผนการเรียน ช่างทั่วไป</h2>
+
+    <table>
+
+        <tr>
+            <th>รหัสประจำตัวผู้สมัคร</th>
+            <th>ชื่อ</th>
+            <th>จัดการ</th>
+        </tr>
+
+        <% data.m43.forEach(function(std){ %>
+
+        <tr>
+
+            <td><%= std.id %></td>
+
+            <td>
+                <%= std.prefix %>
+                <%= std.firstname %>
+                <%= std.lastname %>
+            </td>
+
+
+            <td>
+                <a href="/edit/<%= std.id %>">
+                   <button class="btn-edit">✏️ แก้ไข</button>
+                </a>
+
+                <a href="/print/<%= std.id %>">
+                    <button class="btn-print">🖨 Print</button>
+                </a>
+
+                <a href="/card/<%= std.id %>">
+                    <button class="btn-card">🪪 Card</button>
+                </a>
+
+                <a href="/delete/<%= std.id %>">
+                    <button class="btn-delete">🗑 Delete</button>
+                </a>
+            </td>
+
+        </tr>
+
+        <% }) %>
+
+    </table>
+
+</div>
+
+
+    
+</body>
+</html>
